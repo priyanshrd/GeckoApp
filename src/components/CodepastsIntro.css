@@ -1,0 +1,66 @@
+.container {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 750px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .heading, .description {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: color 0.3s ease;
+  }
+  
+  .visible .heading {
+    opacity: 1;
+    animation: slideIn 2s ease forwards;
+  }
+  
+  .visible .description {
+    opacity: 1;
+    animation: slideIn 3s ease forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-400px);
+    }
+    to {
+      transform: translateX(60px);
+    }
+  }
+  
+  .heading {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 45px;
+    margin-bottom: 10px;
+    color: black;
+    font-weight: bold;
+    text-shadow: 0px 0px 6px rgba(255, 95, 31, 0.6);
+  }
+  
+  .description {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  /* Complement colors when clicked */
+  .container:hover .heading,
+  .container:hover .description {
+    color:#e60202; /* Complement color */
+  }
+  
+  .container:hover {
+    background-color:black; /* Complement background color */
+    border-radius: 10px;
+  }
+  
